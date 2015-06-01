@@ -1,0 +1,29 @@
+{
+  "name": "kit",
+  "version": "0.0.0",
+  "homepage": "none",
+  "authors": [
+    "Ryan Hurst <captainhurst@gmail.com>"
+  ],
+  "description": "An application to make money",
+  "main": "static/",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2"
+  }
+}

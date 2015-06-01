@@ -1,0 +1,26 @@
+{
+  "name": "kit",
+  "version": "0.0.0",
+  "description": "An application to make money",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/captainhurst/unslug"
+  },
+  "author": "Ryan Hurst",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/captainhurst/kit/issues"
+  },
+  "homepage": "https://github.com/captainhurst/kit",
+  "dependencies": {
+    "async": "^0.9.0",
+    "browserify": "^9.0.3",
+    "gulp": "^3.8.11",
+    "less": "^2.4.0",
+    "underscore": "^1.8.2"
+  }
+}
