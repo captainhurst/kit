@@ -16,8 +16,13 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from home.views import Home
+from auth_handler.views import FacebookLogin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^go/', include('rest_auth.urls')),
+    url(r'^go/registration/', include('rest_auth.registration.urls')),
+    url(r'^go/facebook/$', FacebookLogin.as_view(), name='fb_login'),
+    url(r'^user/', include('allauth.urls')),
     url(r'^$', Home.as_view(), name='home'),
 ]

@@ -31,13 +31,23 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'emailusername',
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'auth_handler',
     'home',
 )
 
@@ -63,6 +73,8 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'allauth.account.context_processors.account',
+                'allauth.socialaccount.context_processors.socialaccount',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -100,6 +112,28 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+# Custom User
+AUTH_USER_MODEL = 'emailusername.User'
+USERNAME_FIELD = 'email'
+
+# Rest Auth Framework Settings
+
+REST_SESSION_LOGIN = False
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SITE_ID = 1
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+USERNAME_EMAIL = True
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+REST_AUTH_SERIALIZERS = {
+    'LOGIN_SERIALIZER': 'auth_handler.serializers.LoginSerializer'
+}
 
 
 # Static files (CSS, JavaScript, Images)
